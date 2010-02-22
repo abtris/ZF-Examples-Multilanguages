@@ -1,8 +1,6 @@
 <?php
 
-require_once 'PHPUnit/Framework/TestCase.php';
-
-class TestControllerTest extends PHPUnit_Framework_TestCase
+class RouterControllerTest extends ControllerTestCase
 {
 
     public function setUp()
@@ -15,6 +13,15 @@ class TestControllerTest extends PHPUnit_Framework_TestCase
         /* Tear Down Routine */
     }
 
+
+    public function testRootPath()
+    {
+        $this->dispatch('/');
+        $this->assertAction('index');
+        $this->assertController('index');
+        $this->assertModule('default');
+
+    }
 
 }
 
