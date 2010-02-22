@@ -40,7 +40,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
             )
           )
         );
-
+        /*
         $router->addRoute(
             'langmod',
              new Zend_Controller_Router_Route('/:lang/:module',
@@ -51,7 +51,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
                    )
              )
          );
-
+          */
         $router->addRoute(
             'langmodcontroller',
              new Zend_Controller_Router_Route('/:lang/:module/:controller',
