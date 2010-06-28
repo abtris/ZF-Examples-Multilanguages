@@ -10,19 +10,19 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $router->removeDefaultRoutes();
         $router->addRoute(
           'langmodcontrolleraction',
-          new Zend_Controller_Router_Route('/:lang/:module/:controller/:action',
+          new Zend_Controller_Router_Route('/:lang/:module/:controller/:action/*',
             array('lang' => ':lang')
           )
         );
         $router->addRoute(
           'langcontrolleraction',
-          new Zend_Controller_Router_Route('/:lang/:controller/:action',
+          new Zend_Controller_Router_Route('/:lang/:controller/:action/*',
             array('lang' => ':lang')
           )
         );
         $router->addRoute(
           'lang',
-          new Zend_Controller_Router_Route('/:lang',
+          new Zend_Controller_Router_Route('/:lang/*',
             array('lang' => 'en',
                   'module' => 'default',
                   'controller' => 'index',
@@ -32,7 +32,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         );
         $router->addRoute(
           'langcontroller',
-          new Zend_Controller_Router_Route('/:lang/:controller',
+          new Zend_Controller_Router_Route('/:lang/:controller/*',
             array('lang' => 'en',
                   'module' => 'default',
                   'controller' => 'index',
@@ -43,7 +43,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         /*
         $router->addRoute(
             'langmod',
-             new Zend_Controller_Router_Route('/:lang/:module',
+             new Zend_Controller_Router_Route('/:lang/:module/*',
                    array('lang' => ':lang',
                          'module' => ':module',
                          'controller' => 'index',
@@ -54,7 +54,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
           */
         $router->addRoute(
             'langmodcontroller',
-             new Zend_Controller_Router_Route('/:lang/:module/:controller',
+             new Zend_Controller_Router_Route('/:lang/:module/:controller/*',
                    array('lang' => ':lang',
                          'module' => ':module',
                          'controller' => 'index',
